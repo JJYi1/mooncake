@@ -4,6 +4,8 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as bf
 from push import pushmessageHNV
+from datetime import datetime
+
 
 def chechkmooncake():
     with urlopen('https://www.orientalwebshop.nl/zh/mooncakes') as response:
@@ -23,7 +25,7 @@ def chechkmooncake():
 
 
     curquantity = len(itemlist)
-    print(f"\nNow they are providing {curquantity} kinds of mooncakes\n============================================")
+    print(f"\nNow they are providing {curquantity} kinds of mooncakes\n{datetime.now()}\n============================================")
     #pushmessageHNV(f"没有新月饼")
 
     if curquantity != 22:
